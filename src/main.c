@@ -33,12 +33,9 @@ int main()
             is_executing = false;
         }
 
-        for (int i = 0; i < sizeof(available_commands); i++)
+        if (string_in(command, available_commands, 4) != 1)
         {
-            if (strstr(available_commands, command) != NULL)
-            {
-                print_help_message();
-            }
+            print_help_message();
         }
     }
 
