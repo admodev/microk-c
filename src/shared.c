@@ -12,3 +12,9 @@ void print_help_message()
 	printf("| Run the following command: microhelp   |\n");
 	printf(" ---------------------------------------- \n");
 }
+
+void helper()
+{
+	printf("Available commands:\n");
+	printf("procs\nprocscpu\nclearsc\nexit\n");
+}

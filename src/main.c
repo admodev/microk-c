@@ -9,7 +9,8 @@
 int main()
 {
     bool is_executing = true;
-    char command[100];
+    char *command[500];
+    char *available_commands[] = {"procs", "procscpu", "clearsc", "microhelp", "exit"};
 
     printf("Welcome to Microk-C!\n");
 
@@ -24,12 +25,20 @@ int main()
         }
         else if (strcmp("microhelp", command) == 0)
         {
-            print_help_message();
+            helper();
         }
         else if (strcmp("exit", command) == 0)
         {
-            printf("exiting...\n");
+            printf("Press CTRL+C to abort...\n");
             is_executing = false;
+        }
+
+        for (int i = 0; i < sizeof(available_commands); i++)
+        {
+            if (strstr(available_commands, command) != NULL)
+            {
+                print_help_message();
+            }
         }
     }
 

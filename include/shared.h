@@ -3,5 +3,6 @@
 
 // Function prototypes
 void print_help_message();
+void helper();
 
 #endif
